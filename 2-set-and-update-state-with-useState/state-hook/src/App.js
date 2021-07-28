@@ -10,9 +10,17 @@ function App() {
       <header className="App-header">
         <h1>{ message }</h1>
         <h1>{ score }</h1>
-        <button onClick={() => setScore(score + 1)}>
+        <button onClick={() => setScore(prevScore => prevScore + 1)}>
+        {/*<button onClick={() => setScore(score + 1)}>*/}
           Increase score
         </button>
+       {/* <button onClick={() => setScore(score - 1)}>*/}
+        <button onClick={() => setScore(prevScore => prevScore - 1)}>
+          Decrease score
+        </button>
+
+        <textarea placeholder="update message..." onChange={(e) => setMessage(e.target.value)}>
+        </textarea>
       </header>
     </div>
   );
