@@ -6,8 +6,8 @@ function App() {
   const [ message ] = useState('Welcome!');
 
   useEffect(() => {
-    console.log('useEffect called');
-  }, [])
+    document.title = `${message}. Your score is ${score}`;
+  }, [message, score]) // add dependencies, otherwise pass an empty array to run useEffect once
 
   return (
     <div className="App">
