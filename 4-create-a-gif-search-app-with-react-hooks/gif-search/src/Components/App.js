@@ -10,18 +10,20 @@ function App() {
   const [ data, setData ] = useState([]);
   const [ query, setQuery ] = useState('spongebob');
 
+  const performSearch = (value) => setQuery(value);
+
   useEffect(() => {
     axios(`http://api.giphy.com/v1/gifs/search?q=${query}&limit=24&api_key=${REACT_APP_GIPHY_API_KEY}`)
       .then(response => setData(response.data.data))
       .catch(error => console.log('Error fetching and parsing data', error))
-  }, [query]);
+  }, [query, REACT_APP_GIPHY_API_KEY]);
 
   return (
     <>
       <div className="main-header">
         <div className="inner">
           <h1 className="main-title">GifSearch</h1>
-          <SearchForm />
+          <SearchForm onSearch={performSearch} />
         </div>
       </div>
       <div className="main-content">
