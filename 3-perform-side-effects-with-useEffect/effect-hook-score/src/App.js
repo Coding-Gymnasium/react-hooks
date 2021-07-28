@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     console.log('useEffect called');
-  })
+  }, [])
 
   return (
     <div className="App">
