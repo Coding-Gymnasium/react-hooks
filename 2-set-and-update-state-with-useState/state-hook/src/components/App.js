@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import './App.css';
 import Counter from './SecondCounter';
 
@@ -29,10 +28,6 @@ function App() {
 
     </div>
   );
-}
-
-App.propTypes = {
-  initialCount: PropTypes.number,
 }
 
 export default App;
