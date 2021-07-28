@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
+import Counter from './SecondCounter';
 
-function App({initialCount= 0}) {
+function App() {
   const [ score, setScore ] = useState(0);
   const [ message, setMessage ] = useState('Welcome!');
-  const [ count, setCount ] = useState(initialCount);
 
   return (
     <div className="App">
@@ -23,13 +23,9 @@ function App({initialCount= 0}) {
 
         <textarea placeholder="update message..." onChange={(e) => setMessage(e.target.value)}>
         </textarea>
-
-        <h2> Something Else Here</h2>
-        Count: {count}
-        <button onClick={() => setCount(initialCount)}>Reset</button>
-        <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
-        <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
-        </header>
+        <h2> Second Counter </h2>
+        <Counter />
+      </header>
 
     </div>
   );
