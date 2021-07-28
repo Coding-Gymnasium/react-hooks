@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
 
 function App({initialCount= 0}) {
   const [ score, setScore ] = useState(0);
   const [ message, setMessage ] = useState('Welcome!');
   const [ count, setCount ] = useState(initialCount);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -31,6 +33,10 @@ function App({initialCount= 0}) {
 
     </div>
   );
+}
+
+App.propTypes = {
+  initialCount: PropTypes.number,
 }
 
 export default App;
