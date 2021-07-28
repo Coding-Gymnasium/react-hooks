@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
   const [score, setScore] = useState(0);
   const [ message ] = useState('Welcome!');
+
+  useEffect(() => {
+    console.log('useEffect called!');
+  });
 
   return (
     <div className="App">
