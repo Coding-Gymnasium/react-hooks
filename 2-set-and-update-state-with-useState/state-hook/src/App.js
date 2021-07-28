@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+function App({initialCount= 0}) {
   const [ score, setScore ] = useState(0);
   const [ message, setMessage ] = useState('Welcome!');
-
+  const [ count, setCount ] = useState(initialCount);
   return (
     <div className="App">
       <header className="App-header">
@@ -21,7 +21,14 @@ function App() {
 
         <textarea placeholder="update message..." onChange={(e) => setMessage(e.target.value)}>
         </textarea>
-      </header>
+
+        <h2> Something Else Here</h2>
+        Count: {count}
+        <button onClick={() => setCount(initialCount)}>Reset</button>
+        <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
+        <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+        </header>
+
     </div>
   );
 }
