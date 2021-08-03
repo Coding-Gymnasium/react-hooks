@@ -21,22 +21,22 @@ export const Provider = (props) => {
   const handleAddPlayer = (name) =>  {
     setPlayers(prevState => {
       return [
-        ...prevState, 
+        ...prevState,
         {
           name,
           score: 0,
           id: id += 1
         }
       ]
-    });    
+    });
   };
 
-  const handleRemovePlayer = (id) => { 
+  const handleRemovePlayer = (id) => {
     setPlayers( prevState => prevState.filter(p => p.id !== id) );
   };
 
   return (
-    <ScoreboardContext.Provider value={{ 
+    <ScoreboardContext.Provider value={{
       players,
       actions: {
         changeScore: handleScoreChange,
